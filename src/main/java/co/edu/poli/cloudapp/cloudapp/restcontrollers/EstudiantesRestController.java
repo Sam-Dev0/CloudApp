@@ -19,7 +19,7 @@ public class EstudiantesRestController {
 
     @GetMapping
     public ResponseEntity<List<EstudianteDTO>> getAll() {
-        return ResponseEntity.ok(estudianteService.finAll());
+        return ResponseEntity.ok(estudianteService.findAll());
     }
     
 }

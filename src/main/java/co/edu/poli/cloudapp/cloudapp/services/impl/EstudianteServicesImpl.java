@@ -17,8 +17,14 @@ import co.edu.poli.cloudapp.cloudapp.services.IEstudianteService;
 public class EstudianteServicesImpl implements IEstudianteService {
 
     @Autowired
-    private  IEstudianteRepository repoEstudiante;
-    private  ModelMapper modelMapper;
+    private final  IEstudianteRepository repoEstudiante;
+    
+    private final  ModelMapper modelMapper;
+
+    public EstudianteServicesImpl(IEstudianteRepository repository, ModelMapper modelMapper) {
+        this.repoEstudiante = repository;
+        this.modelMapper = modelMapper;
+    }
 
     @Override
     public EstudianteDTO create(EstudianteDTO estudianteDTO) {
@@ -45,7 +51,7 @@ public class EstudianteServicesImpl implements IEstudianteService {
     }
 
     @Override
-    public List<EstudianteDTO> finAll() {
+    public List<EstudianteDTO> findAll() {
        return repoEstudiante.findAll().stream()
        .map(e -> modelMapper.map(e, EstudianteDTO.class))
        .collect(Collectors.toList());

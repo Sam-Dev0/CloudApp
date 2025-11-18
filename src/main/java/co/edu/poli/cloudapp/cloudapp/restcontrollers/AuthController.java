@@ -14,7 +14,7 @@ import co.edu.poli.cloudapp.cloudapp.security.JwtUtil;
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
-    private JwtUtil jwtUtil;
+    private final JwtUtil jwtUtil;
 
 
     public AuthController(JwtUtil jwtUtil) {

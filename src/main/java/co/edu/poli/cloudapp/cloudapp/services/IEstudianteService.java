@@ -9,5 +9,5 @@ public interface IEstudianteService     {
     EstudianteDTO update(Long id, EstudianteDTO estudianteDTO);
     void delete(Long id);
     EstudianteDTO findById(Long id);
-    List<EstudianteDTO> finAll();
+    List<EstudianteDTO> findAll();
 }
